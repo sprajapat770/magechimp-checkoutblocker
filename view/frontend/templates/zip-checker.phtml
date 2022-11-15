@@ -1,0 +1,29 @@
+<?php
+/** * @var \MageChimp\CheckoutBlocker\Block\ZipChecker $block  */
+/** @var Magento\Framework\Escaper $escaper */
+?>
+
+<form action="<?= $escaper->escapeUrl($block->getZipUrl()) ?>" id="zip-checker-form"
+      method="post" enctype="multipart/form-data">
+    <input type="hidden" name="formKey" value="<?= /* @noEscape */ $block->escapeHtmlAttr($block->getFormKey()) ?>">
+    <input placeholder="<?= __('Enter zipcode')?>"
+           name="zip_code"
+           value="">
+    <input name="form_key" type="hidden" value="<?= $block->escapeHtmlAttr($block->getFormKey()) ?>" />
+    <button type="submit"
+            title="<?= $escaper->escapeHtmlAttr(__('Check')) ?>"
+            class="action zipcode-submit">
+        <span><?= $escaper->escapeHtml(__('Check')) ?></span>
+    </button>
+</form>
+
+<div class="zip-checker-message">
+</div>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "mageChimpZipChecker" : {}
+        }
+    }
+</script>

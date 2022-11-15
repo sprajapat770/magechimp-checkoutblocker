@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="magechimp" translate="label" sortOrder="100">
+            <label>MageChimp</label>
+        </tab>
+        <section id="magechimp" translate="label" type="text" sortOrder="10" showInDefault="1">
+            <class>separator-top</class>
+            <label>MageChimp</label>
+            <tab>magechimp</tab>
+            <resource>Magento_Catalog::config_catalog</resource>
+            <group id="zip" translate="label" type="text" sortOrder="10" showInDefault="1">
+                <label>Zip Input Code Section</label>
+                <field id="codes" translate="label comment" type="text" sortOrder="10" showInDefault="1" canRestore="1">
+                    <label>Zip Codes</label>
+                    <comment>Please Insert Comma Seprated Zip Codes</comment>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
